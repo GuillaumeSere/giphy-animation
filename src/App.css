@@ -1,38 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #282c34;
+    font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-track{
+    background: #282c34;
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(81, 32, 133);
+    border-radius: 1rem;
+}
+
+.gif-title {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 10px;
+    color: transparent;
+    padding: 20px;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+    background-clip: text;
+    /* background-clip tells your CSS exactly where you want to apply */
+    -webkit-background-clip: text;
+    transition: 1s ease-in-out;
+    animation: move 20s linear infinite;
+}
+
+
+@keyframes move {
+    0% {
+        background-position: -1000px 0;
+    }
+    50%,
+    100% {
+        background-position: 1000px 0;
+    }
+    100% {
+        background-position: -1000px 0;
+    }
+}
+
+@keyframes translate {
+    from {
+        transform: translateX(-10px);
+    }
+    to {
+        transform: translateX(10px);
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    margin-bottom: 10px;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    text-align: center;
+    min-height: 100vh;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    margin: 10px auto;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gif-wrap {
+     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    place-items: center; 
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+div.gif-card {
+     flex: 1 0 350px; 
+    /* no stretch */
+    /* stretch */
+    margin: 5px;
+}
+
+h1.gif-title-h1 {
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+a,
+img {
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9; 
+}
+
+img.svg {
+    width: 40px;
+    height: 40px;
+}
+
+.pagination {
+    padding: 20px;
+}
+
+summary:focus {
+    outline: 0;
+}
+
+details[open] summary {
+    padding: 5px;
+    transition: 1s ease-in-out;
+}
+
+.gif-search {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    margin: 16px auto;
+}
+
+.gif-search input {
+    outline: none;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 5px;
+    font-size: 1.1rem;
+    max-width: 100%;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.gif-search img {
+    object-fit: cover;
+    padding: 0 5px;
+    animation: enter 3s linear infinite;
+}
+
+button {
+    outline: none;
+    transition: transform .6s ease-in-out;
+}
+
+.gif-download {
+    background: transparent;
+    border: none;
+}
+
+.gif-btn-submit {
+    border: none;
+    background: transparent;
+}
+
+.gif-btn-trendsearch,
+.gif-btn-trending {
+    cursor: pointer;
+    border: none;
+    margin: 0 10px;
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+div.gif-trend-search {
+    width: 350px;
+    margin: 20px auto;
+}
+
+div.gif-trend-search ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@keyframes enter {
+    0% {
+        transform: translateX(-5px)
+    }
+    50%,
+    100% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-5px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
