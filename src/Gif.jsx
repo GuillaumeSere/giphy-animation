@@ -31,7 +31,6 @@ const Gif = () => {
             let fetchGif = await axios(URL)
             // await promise response
             let fetchRes = await fetchGif
-            console.log(fetchRes)
             // check response
             if (fetchRes.status === 200) {
                 // set data state
