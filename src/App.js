@@ -1,5 +1,5 @@
 import './App.css';
-import Gif from './Gif';
+import Gif from './components/Gif';
 
 function App() {
   return (

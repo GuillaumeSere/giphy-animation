@@ -1,5 +1,5 @@
 import React from 'react'
-import Enter from './Enter.svg'
+import Enter from '../assets/Enter.svg'
 
 export function Search({search, setSearch, fetchData, setTitle}) {
 // Handle Submit
