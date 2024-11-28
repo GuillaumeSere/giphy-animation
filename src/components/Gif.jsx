@@ -133,7 +133,7 @@ const Gif = () => {
                 </div>
                 <div> <strong>Recherche:</strong> {title}</div>
                 <Search search={search} setSearch={setSearch} fetchData={fetchData} setTitle={setTitle} />
-                <a href="/">
+                <a href="./giphy-animation">
                     <img src={Reset} alt="reset" className="svg" />
                 </a>
             </header>
